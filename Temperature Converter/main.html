@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <form>
+        <label for="temperature" style="color:rgb(226, 206, 116);">Temperature:</label> 
+        <!--The for attribute of the label tag should be equal to the id attribute of the input element to bind them together.---> 
+        <input type="number"id="temperature" name="temperature"/> 
+        <!--same input for id and for attributes are used to connect label and input while same input for name is used to create radio question that will conected multiple choice bubbles-->
+
+        <br/>
+        <!-- <label for="displayArea" > Converted Tempreature</label>
+        <textarea name="output" id="displayArea" rows="1" style="border:none;caret-color:transparent;"readonly></textarea> -->
+        <p id="convertedTemp"> Converted Temp:</p>
+        <fieldset>
+            <legend>Input Unit:</legend>
+        <input type="radio" id="fahrenheit" name="startTemp"  value="Fahrenheit">
+        <label for="fahrenheit">Fahrenheit</label><br>
+        <input type="radio" id="celsius" name="startTemp" value="Celsius"/>
+        <label for="celsius">Celsius</label><br>
+        <input type="radio" id="kelvin" name="startTemp" value="Kelvin">
+        <label for="kelvin">Kelvin</label><br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Output Unit</legend>
+            <input type="radio" id="convertFahrenheit" name="convertTemp">
+            <label for="convertFahrenheit">Fahrenheit</label><br>
+            <input type="radio" id="convertCelsius" name="convertTemp">
+            <label for="convertCelsius">Celsius</label><br>
+            <input type="radio" id="convertKelvin" name="convertTemp">
+            <label for="convertKelvin">Kelvin</label><br>
+        </fieldset><br/>
+        <input type="button" id="convert" name="CB" value="Convert" onclick="clicked()">
+        
+    </form>
+    <footer>Sneha Vincent</footer>
+    <script>
+        function clicked(){        
+            const tempValue = document.getElementById("temperature");
+            const fahrenheit = document.getElementById("fahrenheit");
+            const celsius = document.getElementById("celsius");
+            const kelvin = document.getElementById("kelvin");
+            const convertFahrenheit = document.getElementById("convertFahrenheit");
+            const convertCelsius = document.getElementById("convertCelsius");
+            const convertKelvin = document.getElementById ("convertKelvin");
+//temprature value check 
+            if(tempValue.value == "" ){
+                alert("Please enter a tempreature value.");
+            }
+            else{console.log(tempValue.value)}
+
+// input unit check 
+            if(fahrenheit.checked || celsius.checked || kelvin.checked){
+                if(celsius.checked && convertFahrenheit.checked){ 
+                    let result = (parseInt(tempValue.value) * (9/5) + 32).toFixed(2); 
+                    console.log(result);
+                    document.getElementById("convertedTemp").innerHTML += "</br>" + result + " <sup>o</sup>"+ "F";
+                    
+                } 
+                else if(fahrenheit.checked && convertCelsius.checked){ 
+                    let result = ((parseInt(tempValue.value)  - 32)* (5/9)).toFixed(2); 
+                    console.log(result);
+                    document.getElementById("convertedTemp").innerHTML += "</br>" + result + " <sup>o</sup>"+ "C";
+                    } 
+
+                else if(celsius.checked && convertKelvin.checked){ 
+                    let result = (parseInt(tempValue.value) + 273.15).toFixed(2); 
+                    console.log(result);
+                    document.getElementById("convertedTemp").innerHTML += "</br>" + result + " K";
+                    } 
+                
+                else if(kelvin.checked && convertCelsius.checked){
+                    let result = (parseInt(tempValue.value) - 273.15).toFixed(2); 
+                    console.log(result);
+                    document.getElementById("convertedTemp").innerHTML += "</br>" + result + " K";
+                    }
+                else if(fahrenheit.checked && convertKelvin.checked){
+                    let result = ((parseInt(tempValue.value) + 459.67) * (5/9)).toFixed(2); 
+                    console.log(result);
+                    document.getElementById("convertedTemp").innerHTML += "</br>" + result + " K";
+                    }
+                else if(kelvin.checked && convertFahrenheit.checked){
+                    let result = (1.8 * (parseInt(tempValue.value) + 273) +32).toFixed(2); 
+                    console.log(result);
+                    document.getElementById("convertedTemp").innerHTML += "</br>" + result + " K";
+                    }
+
+                }
+
+// output unit check
+            if(convertFahrenheit.checked || convertCelsius.checked || convertKelvin.checked) {
+                if(convertFahrenheit.checked){
+                    console.log("works$")
+                }
+                else if (convertCelsius.checked){
+                    console.log("works$$")
+                }
+                else{
+                    console.log("works$$$")
+                }
+            }
+            else{
+                alert("Please choose a conversion temperature unit." )
+            }
+        
+// if the starting unit and conversion unit are the same:
+            if(fahrenheit.checked && convertFahrenheit.checked){
+                alert("starting and conversion unit cannot be the same.")
+            }
+            else if(celsius.checked && convertCelsius.checked){                
+            alert("starting and conversion unit cannot be the same.")
+        }
+            else if(kelvin.checked && convertKelvin.checked){                
+                alert("starting and conversion unit cannot be the same.")
+            }
+
+        
+// from Celsius to Fahrenheit: 
+
+
+// from Fahrenheit to Celsius: 
+      
+
+// from Celsius to Kelvin: 
+
+        
+// from Kelvin to Celsius: 
+// from Fahrenheit to Kelvin: 
+// from Kelvin to Fahrenheit: 
+}    </script>
+</body>
+</html>

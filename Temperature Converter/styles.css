@@ -1,0 +1,65 @@
+h1{
+    font-size:1.5em;
+    font-family:  sans-serif;
+    width:35%;
+    border-radius:0.5em;
+    border:59% solid rgb(73, 40, 40);
+    text-align: center;
+    background-color:rgb(226, 206, 116);;
+    margin:1% auto;
+    color:rgb(73, 40, 40);
+    padding:1%;
+    box-shadow:2px 2px rgba(0, 0, 0, 0.185);
+
+}
+fieldset{
+    margin:auto;    
+} 
+form{
+    margin:auto auto 1% auto;
+    background-color:rgb(73, 40, 40);
+    width:30%;
+
+    padding:3%;
+    border-radius:1em;
+    color:rgb(226, 206, 116);;
+    box-shadow:  2px 5px rgba(128, 128, 128, 0.185);   
+
+}
+#convert{
+    display:block;
+    margin:auto;
+    padding:2% 8%;
+    border-radius:1em;
+    border:none;
+    color:rgba(31, 0, 0, 0.959);
+}
+#convert:hover{
+    background-color:rgb(255, 226, 97);
+    color:brown;
+}
+label{
+    color:white;
+}
+#temperature{
+    width:60%;
+    background-color:rgba(255, 255, 255, 0.397);
+    border:none;
+    margin: 10px;
+}
+body{
+    background-color:rgb(252, 246, 223);
+}
+input{
+    color:white;
+}
+footer{
+    background-color:rgb(240, 229, 130);
+    position: fixed;
+    left:0;
+    width:100%;
+    bottom: 0px;
+    text-align: center;
+    padding:10px;
+    margin-top:40px;
+}
