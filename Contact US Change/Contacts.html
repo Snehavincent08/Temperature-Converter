@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation/Contact Us</title>
+    <link rel="stylesheet" href="contacts.css"/>
+</head>
+<body>
+    <div class="full">
+    <nav >
+        <a href="Home.html">HOME</a>
+        <a href="Menu.html">MENU</a>
+        <a href="Contacts.html">RESERVATION</a>
+        <a href="sv-ordering.html">ORDER NOW</a>
+
+    </nav>
+
+    <main>
+        <div id="heading" style="grid-area: heading;">
+        <h1 >BOOK YOUR TABLE NOW</h1>
+        </div>
+
+        <div id="img-container" style="grid-area: image;">
+           
+        </div>
+
+        <div id="form-container"  style="grid-area: form;">
+
+            <form>
+                <h2 style="grid-area:head2;">RESERVATION</h2>
+           
+                <input type="text" placeholder="Select Date" name="Calender" id="cal" onfocus="(this.type='date') "requried  style="grid-area: date;">
+
+
+                <select id="opt"   style="grid-area: hour;" required>
+                    <option value="default-hour">Select Hour</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="8:00 PM">8:00 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+                    <option value="11:00 PM">11:00 PM</option>
+                </select>
+
+                <input type="number" name="person" id="p" placeholder="How many people:" min="0" required style="grid-area: persons;">
+                                    
+
+                                
+
+                <input placeholder="Full Name" type="text" name="full-name" id="fn" required style="grid-area:name" width="70%;">
+                    
+                <input type="tel" name="phonenumber" id="PN" placeholder="Phone Number"required style="grid-area:phone"/>
+                <button onclick = reservBooked() style="grid-area:button">Book a Table</button>
+
+
+
+            </form>
+        </div>
+    </main>
+</div>
+    <script>
+        function reservBooked(){
+            let name = document.getElementById("fn").value;
+            let date = document.getElementById("cal").value;
+            let hour = document.getElementById("opt").value;
+            let persons = document.getElementById("p").value;  
+            let phone = document.getElementById("PN").value;  
+
+            if(date && hour && persons){
+
+            alert(`Thank you for booking your table! You have reserved your table on ${date} at ${hour}.`);
+
+        
+            console.log(date);
+            console.log(persons);
+            console.log(hour);
+        }
+            else{
+                alert("please enter your informaiton");
+            }
+        }
+
+    </script>
+</body>
+</html>
