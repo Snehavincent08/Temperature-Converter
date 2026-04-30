@@ -167,9 +167,7 @@ function saveBtn(){
                 }
             }
     }}
-    color()
-        // let array = Array.from(this.parentElement.children)
-        // console.log(array[2].value = `<p>${name.textContent}<p>`)
+
 
 
 
