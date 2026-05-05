@@ -1,0 +1,58 @@
+html{
+    height:100%;
+}
+body{
+    height:100%;
+    margin:0;
+    display:grid;
+    align-items:center;
+
+
+}
+table{
+    border:1px black solid;
+    padding:0px;    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+    height:80%;
+
+
+}
+
+th{
+    border:1px rgb(12, 51, 69) solid;
+    margin:0px;
+    width:10%;
+    background-color: rgb(12, 51, 69);
+    color:white;
+}
+tr {
+    margin:0px;
+    height:10%;
+}
+td{
+    
+    vertical-align: top;
+    padding:10px;
+    border:1px solid black;
+
+}
+caption{
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.filled{
+    border:1px solid black;
+    background-color:rgb(255, 255, 255);
+}
+.notFilled{
+    border:1px solid rgb(122, 122, 122);
+    background-color:rgb(225, 225, 225);
+    color:rgb(225, 225, 225);
+
+}
+.content{
+    height:10%;
+    
+}
